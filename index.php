@@ -2,7 +2,9 @@
 
 include 'Router.php';
 echo 1;
+
 var_dump($_SERVER['REQUEST_URI']);
+var_dump($_GET['val']);
 $route=new Router();
 
 $route->add('/',function(){

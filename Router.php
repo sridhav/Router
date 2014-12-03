@@ -15,8 +15,13 @@ class Router {
     }
 
     function run(){
+        $req=$_SERVER['REQUEST_URI'];
+        $req=str_replace("/Router/","",$req);
         foreach($this->uri as $temp){
-            $temp->run();
+            if($temp->getURI()=="/".$req){
+                echo "ITS HERE $req";
+                break;
+            }
         }
     }
 }
@@ -27,6 +32,9 @@ class URI{
     protected $get;
     protected $post;
 
+    public function getURI(){
+        return $this->uri;
+    }
 
     function __construct($uri,$callback,$get,$post){
         $this->uri=$uri;
