@@ -1,2 +1,3 @@
 RewriteEngine On
+RewriteBase /Router/
 RewriteRule ^/index.php/(.*)$ /$1
